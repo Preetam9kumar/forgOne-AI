@@ -1,0 +1,96 @@
+{
+  "_note": "SYNTHETIC sample data for local dev/testing only. Replace with the organizer-supplied Manufacturing Challenge Pack before evaluation. Structure mirrors what the real pack is expected to contain.",
+  "product": {
+    "id": "prod-001",
+    "name": "Precision Enclosure Assembly",
+    "requirements": [
+      {"field": "certification", "operator": "contains", "value": "ISO9001", "mandatory": true},
+      {"field": "capacity_units_per_month", "operator": ">=", "value": 5000, "mandatory": true},
+      {"field": "lead_time_days", "operator": "<=", "value": 45, "mandatory": true},
+      {"field": "sustainability_score", "operator": ">=", "value": 3, "mandatory": true}
+    ]
+  },
+  "suppliers": [
+    {
+      "id": "aster",
+      "name": "Aster Industries",
+      "location": "Gujarat, India",
+      "facts": [
+        {"field": "certification", "value": ["ISO9001", "ISO14001"], "source_doc": "Aster_Supplier_Profile.pdf", "source_field": "certifications"},
+        {"field": "capacity_units_per_month", "value": 8000, "source_doc": "Aster_Supplier_Profile.pdf", "source_field": "monthly_capacity"},
+        {"field": "lead_time_days", "value": 30, "source_doc": "Aster_Quotation.pdf", "source_field": "production_lead_time"},
+        {"field": "sustainability_score", "value": 4, "source_doc": "Aster_Sustainability_Report.pdf", "source_field": "overall_score"}
+      ],
+      "quotation": {"unit_price": 12.50, "currency": "USD", "moq": 1000, "lead_time_days": 30, "incoterm": "FOB", "valid_until": "2026-12-31"},
+      "evidence_text": [
+        {"doc_id": "Aster_Supplier_Profile.pdf", "source_field": "certifications", "content": "Aster Industries holds active ISO9001:2015 and ISO14001 certifications, audited annually by TUV."},
+        {"doc_id": "Aster_Sustainability_Report.pdf", "source_field": "overall_score", "content": "Aster's sustainability score of 4/5 reflects solar-powered facility operations and a documented waste-reduction program."}
+      ]
+    },
+    {
+      "id": "borealis",
+      "name": "Borealis Manufacturing",
+      "location": "Ontario, Canada",
+      "facts": [
+        {"field": "certification", "value": ["ISO9001"], "source_doc": "Borealis_Profile.pdf", "source_field": "certifications"},
+        {"field": "capacity_units_per_month", "value": 6000, "source_doc": "Borealis_Profile.pdf", "source_field": "monthly_capacity"},
+        {"field": "sustainability_score", "value": 3, "source_doc": "Borealis_Sustainability.pdf", "source_field": "overall_score"}
+      ],
+      "quotation": {"unit_price": 15.00, "currency": "USD", "moq": 500, "lead_time_days": null, "incoterm": "CIF", "valid_until": "2026-11-30"},
+      "evidence_text": [
+        {"doc_id": "Borealis_Profile.pdf", "source_field": "certifications", "content": "Borealis Manufacturing is ISO9001 certified for its Ontario facility."}
+      ],
+      "_note": "Deliberately missing lead_time_days fact -> insufficient-data / fallback demo case."
+    },
+    {
+      "id": "crestpoint",
+      "name": "Crestpoint Fabrication",
+      "location": "Shenzhen, China",
+      "facts": [
+        {"field": "certification", "value": ["ISO9001"], "source_doc": "Crestpoint_Profile.pdf", "source_field": "certifications"},
+        {"field": "capacity_units_per_month", "value": 4000, "source_doc": "Crestpoint_Profile.pdf", "source_field": "monthly_capacity"},
+        {"field": "capacity_units_per_month", "value": 6500, "source_doc": "Crestpoint_RFQ_Response.pdf", "source_field": "stated_capacity"},
+        {"field": "lead_time_days", "value": 40, "source_doc": "Crestpoint_Quotation.pdf", "source_field": "production_lead_time"},
+        {"field": "sustainability_score", "value": 3, "source_doc": "Crestpoint_Sustainability.pdf", "source_field": "overall_score"}
+      ],
+      "quotation": {"unit_price": 9.80, "currency": "USD", "moq": 2000, "lead_time_days": 40, "incoterm": "FOB", "valid_until": "2026-12-15"},
+      "evidence_text": [
+        {"doc_id": "Crestpoint_Profile.pdf", "source_field": "monthly_capacity", "content": "Facility capacity is listed at 4,000 units/month based on current shift patterns."},
+        {"doc_id": "Crestpoint_RFQ_Response.pdf", "source_field": "stated_capacity", "content": "In response to RFQ-2026-014, Crestpoint states it can support 6,500 units/month with an additional shift."}
+      ],
+      "_note": "Deliberately conflicting capacity value across two source docs -> ambiguous/conflicting demo case."
+    },
+    {
+      "id": "deltaforge",
+      "name": "Delta Forge Co",
+      "location": "Karachi, Pakistan",
+      "facts": [
+        {"field": "certification", "value": ["ISO14001"], "source_doc": "DeltaForge_Profile.pdf", "source_field": "certifications"},
+        {"field": "capacity_units_per_month", "value": 7000, "source_doc": "DeltaForge_Profile.pdf", "source_field": "monthly_capacity"},
+        {"field": "lead_time_days", "value": 25, "source_doc": "DeltaForge_Quotation.pdf", "source_field": "production_lead_time"},
+        {"field": "sustainability_score", "value": 4, "source_doc": "DeltaForge_Sustainability.pdf", "source_field": "overall_score"}
+      ],
+      "quotation": {"unit_price": 8.90, "currency": "USD", "moq": 1500, "lead_time_days": 25, "incoterm": "EXW", "valid_until": "2026-12-01"},
+      "evidence_text": [
+        {"doc_id": "DeltaForge_Profile.pdf", "source_field": "certifications", "content": "Delta Forge Co currently holds ISO14001 environmental certification; ISO9001 application is in progress."}
+      ],
+      "_note": "Deliberately missing mandatory ISO9001 -> hard failure demo case."
+    },
+    {
+      "id": "eastwind",
+      "name": "Eastwind Components",
+      "location": "Ho Chi Minh City, Vietnam",
+      "facts": [
+        {"field": "certification", "value": ["ISO9001", "ISO14001", "SA8000"], "source_doc": "Eastwind_Profile.pdf", "source_field": "certifications"},
+        {"field": "capacity_units_per_month", "value": 9500, "source_doc": "Eastwind_Profile.pdf", "source_field": "monthly_capacity"},
+        {"field": "lead_time_days", "value": 22, "source_doc": "Eastwind_Quotation.pdf", "source_field": "production_lead_time"},
+        {"field": "sustainability_score", "value": 5, "source_doc": "Eastwind_Sustainability.pdf", "source_field": "overall_score"}
+      ],
+      "quotation": {"unit_price": 16.20, "currency": "USD", "moq": 800, "lead_time_days": 22, "incoterm": "FOB", "valid_until": "2026-12-20"},
+      "evidence_text": [
+        {"doc_id": "Eastwind_Profile.pdf", "source_field": "certifications", "content": "Eastwind Components maintains ISO9001, ISO14001, and SA8000 social-accountability certifications."}
+      ],
+      "_note": "Clean pass, but priced highest with fastest lead time -> demonstrates ranking flips under sensitivity analysis."
+    }
+  ]
+}

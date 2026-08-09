@@ -1,0 +1,34 @@
+# Core API
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pydantic-settings
+python-dotenv
+
+# Eligibility / ranking engines
+pandas
+numpy
+
+# RAG / Azure AI Foundry integration
+langchain
+langchain-core
+langchain-community
+langchain-azure-ai
+langchain-openai
+azure-identity
+azure-search-documents
+
+# Production database driver (not needed for local SQLite dev)
+psycopg2-binary
+
+# API security and Azure auth helpers
+requests
+python-jose[cryptography]
+
+# Database migrations
+alembic
+
+# Testing
+pytest
+httpx
